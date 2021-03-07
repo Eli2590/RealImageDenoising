@@ -13,9 +13,9 @@ from skimage import img_as_ubyte
 from utils.Transforms import *
 
 parser = argparse.ArgumentParser(description='From RGB images, generate cropped RGB images')
-parser.add_argument('--input_dir', default='./datasets/flickr/',
+parser.add_argument('--input_dir', default='./SIDDTrainingDataset',
                     type=str, help='Directory of clean RGB images')
-parser.add_argument('--result_dir', default='./results/sidd_train/rgb/',
+parser.add_argument('--result_dir', default='./datasets/sidd_train/',
                     type=str, help='Directory for results')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--crop_size', default=128, type=int, help='crop_size')

@@ -22,7 +22,7 @@ parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES'
 parser.add_argument('--lr', default=10e-4, type=float, help='Initial learning rate')
 parser.add_argument('--b1', default=0.9, type=float, help='beta1 for adam optimizer')
 parser.add_argument('--b2', default=0.999, type=float, help='beta2 for adam optimizer')
-parser.add_argument('--epochs', default=5, type=int, help='Number of epochs')
+parser.add_argument('--epochs', default=65, type=int, help='Number of epochs')
 parser.add_argument('--batch_size', default=16, type=int, help='Batch size')
 parser.add_argument('--use_gpu', action='store_true', help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--save_images', action='store_true', help='Save denoised images in result directory')

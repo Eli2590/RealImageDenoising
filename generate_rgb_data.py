@@ -21,9 +21,9 @@ from skimage import img_as_ubyte
 from utils.Transforms import *
 
 parser = argparse.ArgumentParser(description='From clean RGB images, generate {RGB_clean, RGB_noisy} pairs')
-parser.add_argument('--input_dir', default='./datasets/sample_rgb_images/',
+parser.add_argument('--input_dir', default='./FlickrDataset',
                     type=str, help='Directory of clean RGB images')
-parser.add_argument('--result_dir', default='./results/synthesized_data/rgb/',
+parser.add_argument('--result_dir', default='./datasets/flickr/',
                     type=str, help='Directory for results')
 parser.add_argument('--weights_rgb2raw', default='./pretrained_models/isp/rgb2raw_joint.pth',
                     type=str, help='weights rgb2raw branch')
@@ -33,7 +33,7 @@ parser.add_argument('--weights_ccm', default='./pretrained_models/isp/ccm_joint.
                     type=str, help='weights ccm branch')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--use_gpu', action='store_true', help='CUDA_VISIBLE_DEVICES')
-parser.add_argument('--num_workers', default=0, type=int, help='CUDA_VISIBLE_DEVICES')
+parser.add_argument('--num_workers', default=4, type=int, help='CUDA_VISIBLE_DEVICES')
 
 args = parser.parse_args()
 
@@ -47,7 +47,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus
 utils.mkdir(args.result_dir+'clean')
 utils.mkdir(args.result_dir+'noisy')
 
-test_dataset = get_rgb_data(args.input_dir, transforms=RandomCropWb(128))
+test_dataset = get_rgb_data(args.input_dir, transforms=RandomCropWb(64))
 test_loader = DataLoader(dataset=test_dataset, batch_size=4, shuffle=False, num_workers=args.num_workers,
                          drop_last=False)
 

@@ -1,0 +1,1 @@
+Download sRGB Flickr images from here: http://press.liacs.nl/mirflickr/mirflickr1m.v3/, unizp them and place the results here
