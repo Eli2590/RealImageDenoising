@@ -18,7 +18,7 @@ parser.add_argument('--input_dir', default='./SIDDTrainingDataset',
 parser.add_argument('--result_dir', default='./datasets/sidd_train/',
                     type=str, help='Directory for results')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
-parser.add_argument('--crop_size', default=128, type=int, help='crop_size')
+parser.add_argument('--crop_size', default=64, type=int, help='crop_size')
 parser.add_argument('--num_of_crops', default=250, type=int, help='Number of crops per image')
 parser.add_argument('--use_gpu', action='store_true', help='use gpu or not')
 parser.add_argument('--num_workers', default=4, type=int, help='number of workers')
